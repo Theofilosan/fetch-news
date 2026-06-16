@@ -3,7 +3,7 @@ name: Run Discord Bot
 on:
   schedule:
     - cron: '0 * * * *'  # Runs automatically every single hour
-  workflow_dispatch:      # Allows manual execution via button
+  #workflow_dispatch:      # Allows manual execution via button
 
 jobs:
   run-bot:
