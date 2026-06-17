@@ -6,7 +6,7 @@ on:
 
 jobs:
   review_pr:
-    runs-on: Travis-like-ubuntu-latest 
+    runs-on: ubuntu-latest 
     permissions:
       contents: read
       pull-requests: write
