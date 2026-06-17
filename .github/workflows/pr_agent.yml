@@ -1,0 +1,19 @@
+name: AI Code Reviewer
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  review_pr:
+    runs-on: Travis-like-ubuntu-latest 
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: PR Agent Action
+        uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI.API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI.CUSTOM_API_BASE: "https://generativelanguage.googleapis.com/v1beta/openai/"
+          CONFIG.MODEL: "gemini-1.5-flash" 
