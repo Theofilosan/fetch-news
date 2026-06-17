@@ -8,7 +8,7 @@ on:
 
 jobs:
   review_pr:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     permissions:
       contents: read
       pull-requests: write
@@ -18,6 +18,6 @@ jobs:
         uses: Codium-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI.API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENAI.CUSTOM_API_BASE: "https://generativelanguage.googleapis.com/v1beta/openai/"
           CONFIG.MODEL: "gemini-1.5-flash"
